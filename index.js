@@ -383,14 +383,7 @@ const path = require("path");
 const app = express();
 app.use('/data', express.static(path.join(__dirname, 'data')));
 
-// Middleware
-app.use(express.json({ limit: '10mb' }));
-app.use(bodyParser.json({ limit: '10mb' }));
-app.use(cors({
-  origin: ['https://website-1-vfm0.onrender.com'],
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true,
-}));
+
 
 app.use(cors()); // opens to everyone
 
